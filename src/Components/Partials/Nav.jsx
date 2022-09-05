@@ -2,13 +2,17 @@ import style from '../../assets/Style/Nav.module.scss'
 import { NavLink } from "react-router-dom"
 import { useState } from "react";
 import { AiFillHome, AiOutlineClose } from "react-icons/ai";
+import { Search } from './Search';
 
 export const Navigation = () => {
     return (
         <nav className={style.navigation}>
             <ul className={style.ulwrapper}>
-                <li><NavLink to={'/'}>Home</NavLink></li>
+                <li><NavLink to={'/'}>Forside</NavLink></li>
+                <li><NavLink to={'/login'}>Boliger til salg</NavLink></li>
                 <li><NavLink to={'/login'}>Login</NavLink></li>
+                <Search />
+
             </ul>
         </nav>
     )
