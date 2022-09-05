@@ -1,0 +1,107 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+
+
+@media screen and (min-width: $x-large) {}
+
+//Media Queries - pc skærm
+@media screen and (max-width: $large) {
+    .form {
+        input {
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding: 5px 5px;
+            display: block;
+            width: 55%;
+            height: 35px;
+            border: none;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            display: block;
+        }
+
+        //Style af knapper
+        button {
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+
+    //Message ved sendt form
+    .formMessage {
+        article {
+            p {}
+        }
+    }
+}
+
+//Media Queries - tablet skærm
+@media screen and (max-width: $tablet) {
+    .form {
+        input {
+            display: block;
+            border: none;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            display: block;
+        }
+
+        //Style af knapper
+        button {
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+
+    //Message ved sendt form
+    .formMessage {
+        article {
+            p {}
+        }
+    }
+}
+
+//Media Queries - mobil skærm
+@media screen and (max-width: $mobile) {
+    .form {
+        input {
+            display: block;
+            border: none;
+        }
+
+        textarea {
+            border: none;
+            resize: none;
+            display: block;
+        }
+
+        //Style af knapper
+        button {
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        //Message ved sendt form
+        .formMessage {
+            article {
+                p {}
+            }
+        }
+    }
+}
