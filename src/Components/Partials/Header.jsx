@@ -9,7 +9,7 @@ export const Header = () => {
 
             <Navigation />
             <BurgerMenu />
-            <p>hej</p>
+            <h2>HomeLands</h2>
             {/* <Slider /> */}
         </header>
 
