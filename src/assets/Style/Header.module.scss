@@ -2,4 +2,22 @@
 @import '../Helpers/variabler';
 
 
-header {}
+header {
+    background-image: url(../Images/slide1.jpg);
+    background-size: cover;
+    z-index: -1;
+    height: 50vh;
+
+    h2 {
+        position: absolute;
+        color: #fff;
+        font-family: $navFont;
+        border: 1px solid $black;
+        z-index: 2;
+        background-color: #AF7627;
+
+        padding: 0.5em 2em;
+        left: 10em;
+        z-index: 2;
+    }
+}

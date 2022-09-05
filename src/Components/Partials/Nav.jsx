@@ -7,7 +7,7 @@ import { Search } from './Search';
 export const Navigation = () => {
     return (
         <div className={style.navWrapper}>
-            <h2>HomeLands</h2>
+
             <nav className={style.navigation}>
                 <ul className={style.ulwrapper}>
                     <li><NavLink to={'/'}>Forside</NavLink></li>
