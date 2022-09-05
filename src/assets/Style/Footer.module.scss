@@ -1,4 +1,60 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
-footer {}
+footer {
+    position: fixed;
+    height: 15%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    gap: 1em;
+    background-color: $black;
+    color: #fff;
+    font-size: 2vh;
+    padding-left: 1em;
+    margin: 0 -1% -1%-1%;
+    padding: 10px 10px 0 10px;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        gap: -10em;
+        padding-left: 4em;
+    }
+
+    h2 {
+        font-weight: 100;
+        font-size: 2em;
+        font-family: $navFont;
+    }
+
+    p {
+        font-family: $textFont;
+        padding: 0;
+
+    }
+
+    a {
+        font-family: $textFont;
+        text-decoration: none;
+        display: block;
+        color: #fff;
+        // padding: 0.5em; 
+        // padding: 1em 0 1em;
+        padding-top: 1em;
+
+    }
+
+
+
+
+
+    svg {
+        text-align: right;
+        padding: 1em 0.2em 1em;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+
+}
