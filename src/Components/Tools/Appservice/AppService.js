@@ -25,12 +25,7 @@ const create = (endpoint, data) => {
   });
 };
 
-// Sletter token fra databasen (kun frontendt - da den kræver backend)
-const logout = async () => {
-  return await Axios.post(`${ApiUrl}/logout`, {
-    headers: authHeader(),
-  });
-};
+
 
 // Endpoint = Hvad vil du opdatere (artist eks -Agument) Id= hvilket id skal opdateres Data= vores værdier der skal opdater (nydata)
 const update = (endpoint, id, data) => {
@@ -53,9 +48,8 @@ const appService = {
   getDetails,
   create,
   update,
-  remove,
-  login,
-  logout,
+  remove
+
 };
 
 export default appService;

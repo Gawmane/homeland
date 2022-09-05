@@ -1,10 +1,13 @@
 import { Layout } from "../../Tools/Layout/Layout"
+import { HomeList } from "./HomeList"
 
 export const Home = () => {
     return (
         <>
-            <Layout title="Home page" description="opgave">
-                Hallo
+            <Layout description="opgave">
+
+                <HomeList />
+                <h2>Det siger kunderne:</h2>
             </Layout>
         </>
     )

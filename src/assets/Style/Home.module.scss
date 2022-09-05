@@ -1,0 +1,26 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
+.favorites {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include figure;
+
+    figure {
+        width: 100%;
+
+        &:hover {
+            background-color: #e9dded98;
+
+        }
+    }
+
+    span {
+
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+    }
+
+}
