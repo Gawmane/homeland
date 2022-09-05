@@ -6,15 +6,18 @@ import { Search } from './Search';
 
 export const Navigation = () => {
     return (
-        <nav className={style.navigation}>
-            <ul className={style.ulwrapper}>
-                <li><NavLink to={'/'}>Forside</NavLink></li>
-                <li><NavLink to={'/login'}>Boliger til salg</NavLink></li>
-                <li><NavLink to={'/login'}>Login</NavLink></li>
-                <Search />
+        <div className={style.navWrapper}>
+            <h2>HomeLands</h2>
+            <nav className={style.navigation}>
+                <ul className={style.ulwrapper}>
+                    <li><NavLink to={'/'}>Forside</NavLink></li>
+                    <li><NavLink to={'/'}>Boliger til salg</NavLink></li>
+                    <li><NavLink to={'/login'}>Login</NavLink></li>
+                    <li><Search /></li>
 
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+        </div>
     )
 }
 

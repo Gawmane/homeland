@@ -2,41 +2,62 @@
 @import '../Helpers/variabler';
 
 //Fuld navigation
-
-.navigation {
+.navWrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
-    // background-color: $background;
+    grid-template-columns: 60% 40%;
+    background-color: $black;
+    font-family: $navFont;
+    color: #fff;
+    margin: -1% -1% -1%-1%;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 33% 64%, 0 100%);
+    position: relative;
 
 
+    h2 {
+        position: absolute;
 
-    @media (width < $large) {
-        display: none;
+        border: 1px solid $black;
+        z-index: 2;
+        background-color: #AF7627;
+        width: 5em;
+        padding: 1em;
+        left: 10em;
+        z-index: 2;
     }
 
-    .ulwrapper {
+    .navigation {
+        position: relative;
+        right: -55em;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: $black;
+        width: 100%;
 
+        @media (width < $large) {
+            display: none;
+        }
 
-        li {
-            display: inline-block;
-            padding: 1vw;
+        .ulwrapper {
 
+            li {
+                display: inline-block;
+                padding: 1vw;
 
-            a {
-                text-decoration: none;
-                font-size: 15pt;
-                color: #fff;
+                a {
+                    text-decoration: none;
+                    font-size: 15pt;
+                    color: #fff;
 
-                &:hover {
-                    cursor: pointer;
-                    color: black;
+                    &:hover {
+                        cursor: pointer;
+                        color: $brown;
+                    }
                 }
-            }
 
+            }
         }
     }
 }
-
 
 //Størrelse og placering af wrapper
 .burgerMenu {
