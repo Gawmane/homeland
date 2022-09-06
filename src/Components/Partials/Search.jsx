@@ -46,7 +46,7 @@ const SearchResult = props => {
         <p>Fandt {searchData.num_items} resultater på ordet <i>{props.keyword}</i></p>
         {searchData.items && searchData.items.map(item => {
             return (
-                <div key={item.id}>{item.name}</div>
+                <li key={item.id}>{item.name}</li>
             )
         })}</>)
 }

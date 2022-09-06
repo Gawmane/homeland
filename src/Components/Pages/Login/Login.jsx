@@ -3,6 +3,7 @@ import { useAuth } from "../../Tools/Auth/Auth";
 import { Layout } from "../../Tools/Layout/Layout";
 import axios from "axios";
 import style from "../../../assets/Style/Login.module.scss"
+
 export const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     //Henter data fra useAuth
