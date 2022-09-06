@@ -21,20 +21,18 @@
 }
 
 @mixin input {
-    // background-color: $knapbg;
     border-radius: 5px;
     border: solid 1px #000;
-    // color: $primærknap;
+
 }
 
 @mixin button {
-    // background-color:;
+    background-color: $black;
     border-radius: 5px;
     cursor: pointer;
+    padding: 1em;
+    color: #fff;
 
-    &::placeholder {
-        color: #000;
-    }
 }
 
 @mixin figure {
