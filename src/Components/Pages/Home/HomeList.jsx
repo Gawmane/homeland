@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import style from "../../../assets/Style/Home.module.scss"
+import houses from "../../../assets/Style/Houses.module.scss"
+
 import appService from "../../Tools/Appservice/AppService"
 export const HomeList = () => {
     const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ export const HomeList = () => {
         getFavorites();
     }, []);
     return (
-        <section className={style.favorites}>
+        <section className={houses.favorites}>
 
             {data && data.map((favorites, i) => {
                 if (i < 3) {

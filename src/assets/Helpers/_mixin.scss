@@ -9,6 +9,11 @@
     white-space: pre-wrap;
 }
 
+@mixin sidepadding {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
 @mixin burgerX {
     top: 50%;
     left: 0;

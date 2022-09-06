@@ -1,5 +1,13 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+
 body {
   overflow-x: hidden;
 
+  .layoutTitle {
+    @include sidepadding;
+    font-family: $textFont;
+    padding-top: 5%;
+  }
 
 }

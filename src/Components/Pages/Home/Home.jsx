@@ -7,6 +7,7 @@ import { Employees } from "./Employees"
 export const Home = () => {
     return (
         <section>
+            <header className={style.slider}></header>
             <Layout description="opgave">
 
                 <HomeList />

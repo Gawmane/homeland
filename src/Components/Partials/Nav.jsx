@@ -11,7 +11,7 @@ export const Navigation = () => {
             <nav className={style.navigation}>
                 <ul className={style.ulwrapper}>
                     <li><NavLink to={'/'}>Forside</NavLink></li>
-                    <li><NavLink to={'/'}>Boliger til salg</NavLink></li>
+                    <li><NavLink to={'/boliger'}>Boliger til salg</NavLink></li>
                     <li><NavLink to={'/login'}>Login</NavLink></li>
                     <li><Search /></li>
 
@@ -38,6 +38,8 @@ export function BurgerMenu() {
 
             <ul className={isActive ? style.activeMenu : style.menu}>
                 <li><NavLink className={style.navigationLinks} to="/" onClick={handleToggle}>Forside</NavLink></li>
+                <li><NavLink className={style.navigationLinks} to="/boliger" onClick={handleToggle}>Boliger til salg</NavLink></li>
+
                 <li><NavLink className={style.navigationLinks} to="/login" onClick={handleToggle}>Login</NavLink></li>
             </ul>
         </>
