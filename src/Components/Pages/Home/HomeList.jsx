@@ -5,7 +5,6 @@ export const HomeList = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
         const getFavorites = async () => {
-            //Ændres til produkter når det er lavet
             try {
                 const result = await appService.getList('homes');
                 if (result.data) {
