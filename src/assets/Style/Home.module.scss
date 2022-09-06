@@ -2,9 +2,12 @@
 @import '../Helpers/variabler';
 
 section {
+
+
     h2 {
         text-align: center;
         font-size: 3vh;
+        font-family: $textFont;
     }
 
     a {
@@ -82,6 +85,63 @@ section {
                 &:last-child {
                     font-size: 2vh;
                     font-style: normal;
+                }
+            }
+        }
+    }
+
+    .employees {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: $textFont;
+        margin: 10vh 20vh;
+
+        figure {
+            background-size: cover;
+            width: 50vw;
+            height: 50vh;
+            position: relative;
+            border: 1px solid $black;
+            margin: 1em;
+
+            figcaption {
+                position: absolute;
+                width: 100%;
+                bottom: 0vh;
+                background-color: rgba(255, 255, 255, 0.79);
+                border-top: 1px solid $black;
+                color: $black;
+
+                h4 {
+                    padding-left: 1em;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    padding-left: 1em;
+                    padding-bottom: 0;
+                    margin: 0.3em 0;
+
+                }
+
+                span {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                figcaption {
+                    background-color: rgba(0, 0, 0, 0.717);
+                    color: #fff;
+                }
+
+                span {
+                    display: inline;
+
+                    p {
+                        margin: 0;
+                    }
                 }
             }
         }
