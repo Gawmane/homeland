@@ -25,7 +25,18 @@ export const HomeList = () => {
                 if (i < 3) {
                     return (
                         <figure key={favorites.id}>
-                            <img src={favorites.images.filename} alt={favorites.id} />
+                            {favorites && favorites.images.map((items, i) => {
+                                if (i < 1) {
+                                    return (
+
+                                        <img src={items.filename.medium} alt="image" />
+                                    )
+                                }
+                                else {
+                                    return null
+                                }
+                            })}
+
                             <figcaption>
                                 <article>
                                     <h4>{favorites.address}</h4>
