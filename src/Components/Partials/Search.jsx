@@ -1,7 +1,7 @@
 import { BsArrowRightShort } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import style from '../../assets/Style/Nav.module.scss'
 import { useForm } from "react-hook-form";
 
 //Funtion component
@@ -16,7 +16,7 @@ const Search = () => {
     return (
         <>
             {/* //closure = sender funktion videre som tager en funktion som argument og så lukker */}
-            <form onSubmit={handleSubmit(getSearchResult)}>
+            <form onSubmit={handleSubmit(getSearchResult)} className={style.searchform}>
                 {/* //Spread operator(...) - giver mulighed for at kopiere hele eller dele af et eksisterende array eller objekt til et andet array eller objekt. */}
                 <input id="keyword" type="text" placeholder="Søg" {...register("keyword", { required: true })} />
                 <button > <BsArrowRightShort /></button>
@@ -42,13 +42,16 @@ const SearchResult = props => {
         getData()
 
     }, [props.keyword, setSearchData]);
-    return (<>
-        <p>Fandt {searchData.num_items} resultater på ordet <i>{props.keyword}</i></p>
-        {searchData.items && searchData.items.map(item => {
-            return (
-                <li key={item.id}>{item.name}</li>
-            )
-        })}</>)
+    return (
+        <article className={style.searchlist}>
+            <p>Fandt {searchData.num_items} resultater på ordet <i>{props.keyword}</i></p>
+            {searchData.items && searchData.items.map(item => {
+                return (
+                    <ul>
+                        <li key={item.id}>{item.address}</li>
+                    </ul>
+                )
+            })}</article>)
 }
 export { Search, SearchResult }
 

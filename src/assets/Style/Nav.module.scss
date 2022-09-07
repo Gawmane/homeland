@@ -22,6 +22,7 @@
         grid-template-columns: auto auto auto;
         background-color: $black;
         width: 100%;
+        z-index: 2;
 
         @media (width < $large) {
             display: none;
@@ -52,6 +53,8 @@
 
             }
         }
+
+
     }
 }
 
@@ -134,4 +137,42 @@
     }
 
 
+}
+
+//Search 
+.searchform {
+    input {
+        border-radius: 5px;
+        border-right: none;
+        padding: 0.5em;
+        margin-right: 0;
+    }
+
+    button {
+        background-color: rgb(212, 212, 212);
+        padding: 0.5em;
+        margin-left: -3px;
+        border-left: none;
+        @include button;
+    }
+}
+
+.searchlist {
+    position: absolute;
+    z-index: 3;
+    background-color: $black;
+    display: block;
+
+    ul {
+
+
+        li {
+            display: block;
+            cursor: pointer;
+
+            &:hover {
+                color: $brown;
+            }
+        }
+    }
 }

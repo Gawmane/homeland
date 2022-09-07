@@ -20,7 +20,8 @@
     //Style af knapper
     button {
         @include button;
-        cursor: pointer;
+        background-color: $black;
+        padding: 1em;
         margin-right: 0.5em;
         margin-bottom: 0.5em;
     }

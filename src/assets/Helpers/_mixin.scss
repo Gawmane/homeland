@@ -27,10 +27,9 @@
 }
 
 @mixin button {
-    background-color: $black;
+
     border-radius: 5px;
     cursor: pointer;
-    padding: 1em;
     color: #fff;
 
 }
