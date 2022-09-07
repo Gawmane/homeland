@@ -3,11 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../Tools/Layout/Layout";
 import { HouseDetailsItem } from "./HouseDetailsItem";
-import appService from "../../Tools/Appservice/AppService"
 
 
 export const HouseDetails = () => {
-    const { id } = useParams();
+    const { house_id } = useParams();
     //Får objekt ud {} - fordi [] arrey kommer kun ud ved lister
     const [data, setData] = useState({});
 
@@ -15,7 +14,7 @@ export const HouseDetails = () => {
     useEffect(() => {
         const getHouseData = async () => {
             try {
-                const result = await appService.getDetails('homes', 'id');
+                const result = await axios.get(`https://api.mediehuset.net/homelands/homes/${home_id}`);
                 if (result.data) {
                     setData(result.data.item);
                 }
@@ -26,24 +25,18 @@ export const HouseDetails = () => {
         // Funktionskald
         getHouseData()
     },
-        // Dependency array - hvis product_id  ændres renderes komponenten
-        [id])
+        // Dependency array - hvis house_id  ændres renderes komponenten
+        [house_id])
 
     return (
         // Kalder layout komponent med title og description
         <Layout title="Produkt detaljer">
-            <span>
-                <h2>{data.address}</h2>
-                <p>{data.zipcode} {props.data.city}</p>
-                <p>{data.type} | {props.data.floor_space}m2 | {props.data.num_rooms}vær</p>
-                <p>{data.num_clicks}</p></span>
-            <span></span>
-            {/* // Returnerer komponent med product object som data objekt
-            //Splitter html op i yndrelige component (productlistitem) data= smider product ojektet over i andet component som props så vi har adgang til data fra api kaldet
-            */}
-            {/* {data ? (
-                <HouseDetailsItem key={data.id} data={data} product_id={house_id} />
-            ) : null} */}
+            <h1>{data.city}</h1>
+            {data ? (
+
+
+                <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
+            ) : null}
         </Layout>
     )
 }

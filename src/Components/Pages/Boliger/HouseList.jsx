@@ -1,16 +1,18 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import houses from "../../../assets/Style/Houses.module.scss"
 // import { AiOutlineHeart } from "react-icons/ai";
-import appService from "../../Tools/Appservice/AppService"
+
 
 export const HouseList = () => {
     const [data, setData] = useState([]);
+    const { house_id } = useParams(0);
 
     useEffect(() => {
         const getHouses = async () => {
             try {
-                const result = await appService.getList('homes');
+                const result = await axios.get('https://api.mediehuset.net/homelands/homes');
                 if (result.data) {
                     setData(result.data.items);
                     console.log(result.data.items)
@@ -28,7 +30,7 @@ export const HouseList = () => {
 
                 return (
                     <figure key={houses.id} >
-                        <Link to={`/boliger/${houses.id}`} >
+                        <Link to={`${houses.id}`} >
                             {houses && houses.images.map((items, i) => {
                                 if (i < 1) {
                                     return (
