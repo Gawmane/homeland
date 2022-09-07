@@ -6,8 +6,9 @@ import houses from "../../../assets/Style/Houses.module.scss"
 
 
 export const HouseList = () => {
-    const [data, setData] = useState([]);
     const { house_id } = useParams(0);
+    const [data, setData] = useState([]);
+
 
     useEffect(() => {
         const getHouses = async () => {
@@ -26,7 +27,7 @@ export const HouseList = () => {
     return (
         <section className={houses.houselist}>
 
-            {data && data.map((houses, i) => {
+            {data && data.map((houses) => {
 
                 return (
                     <figure key={houses.id} >
@@ -35,7 +36,7 @@ export const HouseList = () => {
                                 if (i < 1) {
                                     return (
 
-                                        <img src={items.filename.medium} alt="image" />
+                                        <img src={items.filename.medium} alt="image" key={items.id} />
                                     )
                                 }
                                 else {

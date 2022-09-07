@@ -14,7 +14,7 @@ export const HouseDetails = () => {
     useEffect(() => {
         const getHouseData = async () => {
             try {
-                const result = await axios.get(`https://api.mediehuset.net/homelands/homes/${home_id}`);
+                const result = await axios.get(`https://api.mediehuset.net/homelands/homes/${house_id}`);
                 if (result.data) {
                     setData(result.data.item);
                 }
@@ -31,12 +31,22 @@ export const HouseDetails = () => {
     return (
         // Kalder layout komponent med title og description
         <Layout title="Produkt detaljer">
-
             {data ? (
                 <>
-                    <h1>{data.city}</h1>
 
-                    <HouseDetailsItem key={data.id} data={data} house_id={house_id} /></>
+                    <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
+
+
+                    {/* <figure>
+                        <figcaption>
+                            <h3>{data.staff.firstname}</h3>
+                            <p>{data.staff.position}</p>
+                            <p>{data.staff.phone}</p>
+                            <p>{data.staff.email}</p>
+                        </figcaption>
+                    </figure> */}
+                </>
+
             ) : null}
         </Layout>
     )
