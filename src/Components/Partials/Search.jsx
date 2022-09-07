@@ -59,7 +59,7 @@ const Result = (props) => {
         <article className={style.searchlist}>
             <p>Fandt {props.num_items} resultater på ordet <i>{props.keyword}</i></p>
 
-           //Midertigt indtil data fra houselist kan ersatte det
+            {/* //Midertigt indtil data fra houselist kan ersatte det */}
             {props.items && props.items.map(item => {
                 return (
                     <ul>
