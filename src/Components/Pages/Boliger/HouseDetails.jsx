@@ -31,11 +31,12 @@ export const HouseDetails = () => {
     return (
         // Kalder layout komponent med title og description
         <Layout title="Produkt detaljer">
-            <h1>{data.city}</h1>
+
             {data ? (
+                <>
+                    <h1>{data.city}</h1>
 
-
-                <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
+                    <HouseDetailsItem key={data.id} data={data} house_id={house_id} /></>
             ) : null}
         </Layout>
     )
