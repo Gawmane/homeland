@@ -21,10 +21,16 @@
 
     .reviews {
 
+
         margin-right: -10%;
 
         margin-left: -10%;
         background-color: $rosa;
+
+        @media (width < $mobile) {
+
+            background-color: red;
+        }
 
         article {
             text-align: center;
@@ -48,6 +54,8 @@
         margin-right: -10%;
 
         margin-left: -10%;
+
+
 
         .reviwform {
             margin: auto;

@@ -65,6 +65,7 @@
     margin-top: -15em;
     @include figure;
 
+
     figure {
         width: 100%;
         height: 70%;
@@ -123,23 +124,28 @@
 .details {
     @include sidepadding;
 
-
     //Øverste del (gemmensigtig) i detalie siden
     .detailstop {
         @include glasseffect;
         display: grid;
         grid-template-columns: 33.33% 33.33% 33.33%;
-        margin-top: -9em;
+        // margin-top: -9em;
         border-bottom-left-radius: 0%;
         border-bottom: none;
         border-bottom-right-radius: 0%;
         padding-left: 5%;
 
+        @media (width < $mobile) {
+            display: block;
+            margin-top: 0;
+        }
 
         span {
             display: grid;
             grid-template-rows: auto auto auto auto;
             margin-bottom: 1em;
+
+
 
             &:nth-child(2) {
 
@@ -194,6 +200,10 @@
         display: grid;
         grid-template-columns: 33% 35% 33%;
 
+        @media (width < $mobile) {
+            display: block;
+            margin-top: 0;
+        }
 
     }
 

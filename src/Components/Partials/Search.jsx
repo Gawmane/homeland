@@ -66,7 +66,7 @@ const Result = (props) => {
                     <Link to={`/boliger/${item.id}`}>
                         <figure key={item.id}>
 
-                            {/* <img src={item.images.filename.medium} alt="image" key={item.id} /> */}
+                            <img src={item.images[0].filename.medium} alt="image" key={item.id} />
                             <figcaption>
                                 <h4>{item.address}</h4>
                                 <p>{item.zipcode} {item.city}</p>

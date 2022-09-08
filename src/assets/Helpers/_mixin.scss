@@ -41,6 +41,10 @@
 }
 
 @mixin figure {
+    @media (width < $mobile) {
+        display: block;
+    }
+
     figure {
         border: solid 0.5px #000;
         -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.6);
