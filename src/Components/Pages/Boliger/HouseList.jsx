@@ -68,3 +68,8 @@ export const HouseList = () => {
         </section>
     )
 }
+export const Sorting = () => {
+    return (
+        <ul></ul>
+    )
+}
