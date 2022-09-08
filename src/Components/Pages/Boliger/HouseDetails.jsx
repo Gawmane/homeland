@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../Tools/Layout/Layout";
-import { HouseDetailsItem } from "./HouseDetailsItem";
+import { FloorplanIcon, HouseDetailsItem } from "./HouseDetailsItem";
 import style from "../../../assets/Style/Houses.module.scss"
 
 
@@ -32,7 +32,7 @@ export const HouseDetails = () => {
     return (
         // Kalder layout komponent med title og description
         <Layout description="Produkt detaljer">
-            <header className={style.detailsheader}>
+            {/* <header className={style.detailsheader}>
                 {data && data.images.map((items, i) => {
                     if (i < 1) {
                         return (
@@ -43,11 +43,12 @@ export const HouseDetails = () => {
                     else {
                         return null
                     }
-                })}</header>
+                })}</header> */}
             {data ? (
                 <>
 
                     <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
+
 
 
 

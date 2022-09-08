@@ -2,7 +2,10 @@
 import style from "../../../assets/Style/Houses.module.scss"
 import { AiFillCamera, AiOutlineHeart, AiOutlineBuild } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { useState } from "react";
+
 export const HouseDetailsItem = props => {
+    const [openModal, setOpenModal] = useState("");
     return (
         <section className={style.details}>
             <article className={style.detailstop}>
@@ -12,10 +15,14 @@ export const HouseDetailsItem = props => {
                     <p>{props.data.type} | {props.data.floor_space}m2 | {props.data.num_rooms}vær</p>
                     <p>Set {props.data.num_clicks} gange</p></span>
                 <span>
-                    <AiFillCamera />
-                    <AiOutlineBuild />
-                    <FaMapMarkerAlt />
+                    <AiFillCamera onClick={() => setOpenModal("galleryicon")} />
+                    <AiOutlineBuild onClick={() => setOpenModal("floorplanicon")} />
+                    <FaMapMarkerAlt onClick={() => setOpenModal("mapicon")} />
                     <AiOutlineHeart />
+                    {/* openmodal er i identisk med navnet i " " og det comonent der er tilføjet */}
+                    {openModal === "mapicon" && <MapIcon />}
+                    {openModal === "galleryicon" && <GalleryIcon />}
+                    {openModal === "floorplanicon" && <FloorplanIcon />}
 
                 </span>
                 <span>
@@ -55,5 +62,33 @@ export const HouseDetailsItem = props => {
 
 
         </section>
+    )
+}
+//Icon compnenter til modal - virker ikke med api data
+export const FloorplanIcon = () => {
+
+    return (
+
+        <p>hej</p>
+
+
+
+
+    )
+}
+export const GalleryIcon = props => {
+    return (
+
+        // <img src={props.data.floorplan} alt="floorplan" />
+        <h1>agallery</h1>
+
+    )
+}
+export const MapIcon = props => {
+    return (
+
+        // <img src={props.data.floorplan} alt="floorplan" />
+        <h1>map</h1>
+
     )
 }
