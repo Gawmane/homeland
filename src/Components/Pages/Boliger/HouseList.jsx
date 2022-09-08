@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import houses from "../../../assets/Style/Houses.module.scss"
 // import { AiOutlineHeart } from "react-icons/ai";
 
 
 export const HouseList = () => {
-    const { house_id } = useParams(0);
     const [data, setData] = useState([]);
 
 

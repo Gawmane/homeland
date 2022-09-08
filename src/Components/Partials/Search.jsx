@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import style from '../../assets/Style/Nav.module.scss'
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 //Funtion component
 const Search = () => {
@@ -62,13 +63,23 @@ const Result = (props) => {
             {/* //Midertigt indtil data fra houselist kan ersatte det */}
             {props.items && props.items.map(item => {
                 return (
-                    <ul>
-                        <li key={item.id}>{item.address}</li>
+                    <Link to={`/boliger/${item.id}`}>
+                        <figure key={item.id}>
 
-                    </ul>
+                            {/* <img src={item.images.filename.medium} alt="image" key={item.id} /> */}
+                            <figcaption>
+                                <h4>{item.address}</h4>
+                                <p>{item.zipcode} {item.city}</p>
+                                <p>{item.type}</p>
+                            </figcaption>
+                        </figure>
+                    </Link>
+
+
+
                 )
             })}
-        </article>)
+        </article >)
 }
 //Vises hvis keyword ikke findes - fejlmeddelese
 const NoResult = (props) => {

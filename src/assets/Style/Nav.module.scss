@@ -162,16 +162,25 @@
     z-index: 3;
     background-color: $black;
     display: block;
+    @include figure;
 
-    ul {
+    figure {
+        border-color: #fff;
 
+        &:hover {
+            color: $brown
+        }
 
-        li {
-            display: block;
-            cursor: pointer;
+        figcaption {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            font-size: 2vh;
+            margin: auto;
 
-            &:hover {
-                color: $brown;
+            h4 {
+
+                padding: 1em 0;
+
             }
         }
     }
