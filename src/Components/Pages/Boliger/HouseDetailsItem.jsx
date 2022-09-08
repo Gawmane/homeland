@@ -8,6 +8,7 @@ export const HouseDetailsItem = props => {
     const [openModal, setOpenModal] = useState("");
     return (
         <section className={style.details}>
+
             <article className={style.detailstop}>
                 <span>
                     <h3>{props.data.address}</h3>
@@ -57,7 +58,9 @@ export const HouseDetailsItem = props => {
             <article className={style.detailscontent}>
 
                 <p>{props.data.description}</p>
-                <div>TOM DIV HVOR DER SKAL VÆRE PLADS TIL MÆGLER</div>
+                <div>TOM DIV HVOR DER SKAL VÆRE PLADS TIL MÆGLER
+
+                </div>
             </article>
 
 

@@ -44,6 +44,7 @@ export const HouseDetails = () => {
                         return null
                     }
                 })}</header> */}
+
             {data ? (
                 <>
 
