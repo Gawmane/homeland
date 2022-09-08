@@ -5,7 +5,6 @@ import houses from "../../../assets/Style/Houses.module.scss"
 import appService from "../../Tools/Appservice/AppService"
 export const HomeList = () => {
     const [data, setData] = useState([]);
-    const { house_id } = useParams(0);
 
 
     useEffect(() => {
@@ -29,7 +28,7 @@ export const HomeList = () => {
                 if (i < 3) {
                     return (
                         <figure key={favorites.id}>
-                            <Link to={`${favorites.id}`} >
+                            <Link to={`/boliger/${favorites.id}`} >
                                 {favorites && favorites.images.map((items, i) => {
                                     if (i < 1) {
                                         return (

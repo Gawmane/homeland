@@ -10,7 +10,7 @@ export const Home = () => {
     //"Firstarticle" vises fra start men bliver ændret ved click til "secondArticle"
     const [active, setActive] = useState("FirstArticle")
     return (
-        <section>
+        <section className={style.homesection}>
             <header className={style.slider}></header>
             <Layout description="Forside homeland">
 
