@@ -1,7 +1,7 @@
 @import '../Helpers/mixin';
 @import '../Helpers/variabler';
 
-
+//Viser liste over boligere
 .houselist {
     @include sidepadding;
     @include figure;
@@ -47,13 +47,13 @@
 }
 
 
-
+//Boglig liste på forsiden
 .favorites {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    margin-top: -5em;
+    margin-top: -15em;
     @include figure;
 
     figure {
@@ -95,4 +95,115 @@
         }
     }
 
+}
+
+//Detailje side
+//Header image
+.detailsheader {
+
+    margin: -10% -1% -1%-1%;
+
+    .detailsimage {
+        border-bottom: 1em solid $black;
+        width: 100%;
+        height: 50vh;
+    }
+}
+
+//Section wrapper fra detailsitems
+.details {
+    @include sidepadding;
+
+
+    //Øverste del (gemmensigtig) i detalie siden
+    .detailstop {
+        @include glasseffect;
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        margin-top: -9em;
+        border-bottom-left-radius: 0%;
+        border-bottom: none;
+        border-bottom-right-radius: 0%;
+        padding-left: 5%;
+
+
+        span {
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            margin-bottom: 1em;
+
+            &:nth-child(2) {
+
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                margin: auto;
+
+
+                svg {
+                    border: solid 0.5px rgb(58, 58, 58);
+                    background-color: rgba(255, 255, 255, 0.648);
+                    margin: 0.5em;
+                    border-radius: 50%;
+                    padding: +.5em;
+                    font-size: 1.5em;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #fff;
+                    }
+                }
+            }
+
+            h3 {
+                padding-bottom: 0.2em;
+                margin-bottom: 0;
+            }
+
+            p {
+                padding: 0.2em;
+                margin: 0;
+
+            }
+
+        }
+    }
+
+    //Den midterste del (liste delen)
+    .detailsmiddel {
+        @include glasseffect;
+        border-bottom-left-radius: 0%;
+        border-bottom: none;
+        border-top-left-radius: 0%;
+        border-top-right-radius: 0%;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+
+        // background-color: red;
+        display: grid;
+        grid-template-columns: 33% 35% 33%;
+
+
+    }
+
+    .detailscontent {
+
+        display: grid;
+        grid-template-columns: auto auto;
+        padding-top: 1em;
+        margin-bottom: 1em;
+        padding-left: 5%;
+        padding-right: 5%;
+        @include glasseffect;
+
+        border-top: none;
+        border-top-left-radius: 0%;
+        border-top-right-radius: 0%;
+
+        p {
+            white-space: pre-wrap;
+        }
+    }
 }

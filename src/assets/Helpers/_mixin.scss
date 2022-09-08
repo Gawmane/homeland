@@ -4,9 +4,15 @@
     margin-right: auto;
 }
 
-//Får text til at stå pænt m linjeskift
-@mixin nl2br {
-    white-space: pre-wrap;
+@mixin glasseffect {
+    background: rgba(255, 255, 255, 0.836);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+
 }
 
 @mixin sidepadding {

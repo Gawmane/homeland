@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Layout } from "../../Tools/Layout/Layout";
 import { HouseDetailsItem } from "./HouseDetailsItem";
+import style from "../../../assets/Style/Houses.module.scss"
 
 
 export const HouseDetails = () => {
@@ -30,24 +31,38 @@ export const HouseDetails = () => {
 
     return (
         // Kalder layout komponent med title og description
-        <Layout title="Produkt detaljer">
+        <Layout description="Produkt detaljer">
+            <header className={style.detailsheader}>
+                {data && data.images.map((items, i) => {
+                    if (i < 1) {
+                        return (
+
+                            <img src={items.filename.large} alt="image" key={items.id} className={style.detailsimage} />
+                        )
+                    }
+                    else {
+                        return null
+                    }
+                })}</header>
             {data ? (
                 <>
 
                     <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
 
 
-                    {/* <figure>
-                        <figcaption>
-                            <h3>{data.staff.firstname}</h3>
-                            <p>{data.staff.position}</p>
-                            <p>{data.staff.phone}</p>
-                            <p>{data.staff.email}</p>
-                        </figcaption>
-                    </figure> */}
+
                 </>
 
             ) : null}
+            {/* <figure>
+                <figcaption>
+                    <h3>{data.staff.firstname}</h3>
+                    <p>{data.staff.position}</p>
+                    <p>{data.staff.phone}</p>
+                    <p>{data.staff.email}</p>
+                </figcaption>
+            </figure> */}
+
         </Layout>
     )
 }
