@@ -155,17 +155,26 @@
         border-left: none;
         @include button;
     }
+
+
+
 }
 
+
+
 .searchlist {
-    // position: absolute;
+
+    margin-bottom: 10em;
     z-index: 3;
     background-color: $black;
     display: block;
+
     @include figure;
+
 
     figure {
         border-color: #fff;
+        margin-left: 0;
 
         &:hover {
             color: $brown
