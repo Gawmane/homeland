@@ -12,7 +12,7 @@ export const Home = () => {
     return (
         <section>
             <header className={style.slider}></header>
-            <Layout description="opgave">
+            <Layout description="Forside homeland">
 
                 <HomeList />
                 <h2>Det siger kunderne:</h2>
