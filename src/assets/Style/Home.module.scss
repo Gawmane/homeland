@@ -104,6 +104,11 @@
 
         }
 
+        @media (width < $tablet) {
+            margin: auto;
+
+        }
+
         figure {
             background-size: cover;
             width: 50vw;

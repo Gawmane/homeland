@@ -9,6 +9,16 @@
     grid-template-columns: auto auto auto;
     gap: 1em;
 
+    @media (width < $tablet) {
+        margin: auto;
+        padding-right: 0;
+        padding-left: 0;
+
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1em;
+    }
+
     a {
         color: $black;
         text-decoration: none;
@@ -66,6 +76,11 @@
 
     @media (width < $mobile) {
         margin-top: 13em;
+
+    }
+
+    @media (width < $tablet) {
+        margin-top: 10em;
 
     }
 

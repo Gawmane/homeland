@@ -21,8 +21,14 @@ header {
         left: 10em;
         top: 0.5em;
 
-        @media (width < $mobile) {
+        @media (width < $mobile ) {
             display: none;
+        }
+
+        @media (width < $tablet ) {
+            padding: 0.5em 2em;
+            left: 5em;
+            top: 0.5em;
         }
     }
 }
