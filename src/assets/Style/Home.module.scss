@@ -18,16 +18,11 @@
     }
 
 
-
+    //Sektion med andmedelser og skift til skriv andmedelse
     .reviews {
-
-
         margin-right: -10%;
-
         margin-left: -10%;
         background-color: $rosa;
-
-
 
         article {
             text-align: center;
@@ -96,12 +91,18 @@
         }
     }
 
+    //Sektion med medarbejdere 
     .employees {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-family: $textFont;
         margin: 10vh 20vh;
+
+        @media (width < $mobile) {
+            display: inline;
+
+        }
 
         figure {
             background-size: cover;
@@ -110,6 +111,11 @@
             position: relative;
             border: 1px solid $black;
             margin: 1em;
+
+            @media (width < $mobile) {
+
+                margin: auto;
+            }
 
             figcaption {
                 position: absolute;
@@ -153,10 +159,3 @@
         }
     }
 }
-
-// .slider {
-//     background-image: url(../Images/slide1.jpg);
-//     background-size: cover;
-//     z-index: -1;
-//     height: 50vh;
-// }

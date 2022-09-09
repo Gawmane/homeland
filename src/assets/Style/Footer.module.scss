@@ -52,6 +52,11 @@ footer {
         padding: 1em 0.2em 1em;
         font-size: 2em;
         cursor: pointer;
+
+        @media (width < $mobile) {
+            padding: 0;
+
+        }
     }
 
 
