@@ -74,6 +74,7 @@
     @include figure;
     margin-top: 5em;
 
+
     @media (width < $mobile) {
         margin-top: 13em;
 
@@ -90,6 +91,7 @@
         cursor: pointer;
         background-color: transparent;
 
+
         @media (width < $mobile) {
             width: 80vw;
         }
@@ -100,8 +102,10 @@
         }
 
         figcaption {
+            text-align: left;
 
             h4 {
+                font-size: 1.5em;
                 padding-bottom: 0.5em;
             }
 

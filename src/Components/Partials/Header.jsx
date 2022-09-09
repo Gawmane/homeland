@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Header = () => {
     return (
-        <header>
+        <header className={style.mainheader}>
 
             <Navigation />
             <BurgerMenu />
