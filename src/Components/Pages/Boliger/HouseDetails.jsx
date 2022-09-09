@@ -51,14 +51,14 @@ export const HouseDetails = () => {
                     <HouseDetailsItem key={data.id} data={data} house_id={house_id} />
 
 
-                    <figure>
+                    {/* <figure>
                         <figcaption>
                             <h3>{data.staff.firstname}</h3>
                             <p>{data.staff.position}</p>
                             <p>{data.staff.phone}</p>
                             <p>{data.staff.email}</p>
                         </figcaption>
-                    </figure>
+                    </figure> */}
 
                 </>
 

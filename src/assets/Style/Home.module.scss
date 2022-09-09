@@ -10,6 +10,7 @@
         font-family: $textFont;
     }
 
+
     a {
         text-align: center;
         font-size: 2vh;
@@ -17,6 +18,13 @@
         color: $black;
     }
 
+    button {
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        font: $textFont;
+        padding: 1em;
+    }
 
     //Sektion med andmedelser og skift til skriv andmedelse
     .reviews {
