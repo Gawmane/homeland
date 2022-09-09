@@ -20,6 +20,10 @@ footer {
         grid-template-columns: 20% 20% 20%;
         gap: -10em;
         padding-left: 4em;
+
+        @media (width < $mobile) {
+            display: inline;
+        }
     }
 
     h2 {
@@ -39,15 +43,9 @@ footer {
         text-decoration: none;
         display: block;
         color: #fff;
-        // padding: 0.5em; 
-        // padding: 1em 0 1em;
         padding-top: 1em;
 
     }
-
-
-
-
 
     svg {
         text-align: right;

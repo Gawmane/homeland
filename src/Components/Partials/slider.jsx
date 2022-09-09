@@ -1,53 +1,44 @@
-import React from 'react';
-
-//import SimpleImageSlider from "react-simple-image-slider";
-import Slide1 from '../../assets/Images/slide1.jpg'
-import Slide2 from '../../assets/Images/side2.jpg'
-import Slide3 from '../../assets/Images/slide3.jpg'
+import React, { useEffect } from 'react';
+import Carousel from 'react-material-ui-carousel'
+import style from "../../assets/Style/Slider.module.scss"
+import appService from "../Tools/Appservice/AppService"
+import axios from 'axios';
+import { useState } from 'react';
 
 
 export const Slider = () => {
 
-    // laver Array med billedets url, en titel til at have over sig og så et alt tag til billedet
-    const carouselItem = [
-        {
-            url: Slide1,
-            alt: "house homelands",
-        },
-        {
-            url: Slide2,
-            alt: "house homelands",
-        },
+    const [slider, setSlider] = useState([]);
 
-        {
-            url: Slide3,
-
-            alt: "house homelands",
-        },
-    ]
-
+    useEffect(() => {
+        const getSlider = async () => {
+            try {
+                const result = await axios.get('https://api.mediehuset.net/homelands/images');
+                if (result.data) {
+                    setSlider(result.data.items);
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        getSlider();
+    }, []);
 
     return (
-        // <Carousel>
-        <section>
-            {/* Map vores array  */}
-            {
-                carouselItem.map((item, index) => {
+        <header className={style.slider}>
+            <Carousel >
+
+
+                {slider && slider.map((items) => {
                     return (
-                        <Item key={index} item={item}></Item>)
-                })
-            }</section>
-        // </Carousel>
+                        <div key={items.id}>
+                            <img src={items.image[1]} alt="imgslider" width="100%"  ></img>
+
+                        </div>
+                    )
+                })}
+            </Carousel></header>
     )
 }
 
 
-function Item(props) {
-
-    return (
-        <div >
-
-            <img alt={props.item.alt} src={props.item.url} ></img>
-        </div>
-    )
-}

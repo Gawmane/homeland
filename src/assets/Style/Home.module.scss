@@ -27,10 +27,7 @@
         margin-left: -10%;
         background-color: $rosa;
 
-        @media (width < $mobile) {
 
-            background-color: red;
-        }
 
         article {
             text-align: center;
@@ -157,9 +154,9 @@
     }
 }
 
-.slider {
-    background-image: url(../Images/slide1.jpg);
-    background-size: cover;
-    z-index: -1;
-    height: 50vh;
-}
+// .slider {
+//     background-image: url(../Images/slide1.jpg);
+//     background-size: cover;
+//     z-index: -1;
+//     height: 50vh;
+// }
