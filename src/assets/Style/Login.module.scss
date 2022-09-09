@@ -2,7 +2,8 @@
 @import '../Helpers/variabler';
 
 .loginsection {
-    @include sidepadding
+    @include sidepadding;
+    margin-bottom: 15em;
 }
 
 .form {
