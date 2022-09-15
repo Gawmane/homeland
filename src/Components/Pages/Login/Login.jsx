@@ -3,21 +3,32 @@ import { useAuth } from "../../Tools/Auth/Auth";
 import { Layout } from "../../Tools/Layout/Layout";
 import axios from "axios";
 import style from "../../../assets/Style/Login.module.scss"
-import { MyTable } from "./Admid";
+
+import { useState } from "react"
+import { Admin } from "../Comment/Delete";
+
 
 export const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     //Henter data fra useAuth
     const { loginData, setLoginData } = useAuth();
-
+    const [message, setMessage] = useState('');
 
     // Funktion til at kalde api med form data
     const sendLogin = async data => {
         const formData = new FormData();
+        //Tilføjer username og password til objektet 
         formData.append("username", data.username);
         formData.append("password", data.password);
-        const result = await axios.post('https://api.mediehuset.net/token', formData)
-        handleSessionData(result)
+        //Poster endpoint med formdata
+        try {
+            const result = await axios.post('https://api.mediehuset.net/token', formData)
+            handleSessionData(result.data);
+        }
+        //Hvis der er fejl i login send fejlbesked 
+        catch (err) {
+            setMessage('Kunne ikke logge ind - tjek dit brugernavn og password')
+        }
     }
     //Funktion til at håndtere form data
     const handleSessionData = data => {
@@ -59,6 +70,7 @@ export const Login = () => {
                             {errors.password && (
                                 <span> Indtast din adgangskode</span>
                             )}
+                            <p>{message}</p>
                             <button>Login</button>
                             <button type="reset">Annuller</button>
                         </form>
@@ -67,7 +79,9 @@ export const Login = () => {
                     //Hvis man er logget ind vises side med administration
                     <Layout title="Administration" description="Administrations side ved login" >
                         <p>Du er logget ind som <i>{loginData.username}</i></p>
-                        <MyTable />
+
+                        <Admin />
+                        {/* <MyTable /> */}
                         {/* Knap der kalder vores logout funktion og logger af */}
                         <button onClick={logOut}>Logout</button>
                     </Layout>)

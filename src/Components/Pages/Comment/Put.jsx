@@ -1,32 +1,32 @@
-import { useState } from "react";
-import style from "../../../assets/Style/Home.module.scss"
-import { useForm } from 'react-hook-form';
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import { authHeader } from "../../Tools/Appservice/AuthHeader";
+import { useForm } from "react-hook-form";
+import { useState } from "react"; import { authHeader } from "../../Tools/Appservice/AuthHeader";
 
-import { Link } from "react-router-dom";
 
-//Funktion til oprettelse af reviews
-export const NewReviews = () => {
-    //UseState hook - false 
-    const [formStatus, setFormStatus] = useState(false);
-    //Form Hook til handelsubmit
+//Funktion til opdatering af reviews
+export const EditReviews = () => {
+    //Useparms hook til styring af id
+    const { comment_id } = useParams();
+    //Form Hook
     const { register, handleSubmit, formState: { errors } } = useForm();
+    //UseState hook - false
+    const [formStatus, setFormStatus] = useState(false);
 
     //Funktion til at kalde api med form data
     const onSubmit = async (data) => {
-        const formData = new FormData();
-        //Tilføjer title,content,user_id,num_starts og active til objektet
+        //Tilføjer id,title,content,num_starts og active til objektet
+        const formData = new URLSearchParams();
+        formData.append('id', comment_id);
         formData.append('title', data.title);
         formData.append('content', data.content);
-        formData.append('user_id', data.user_id);
         formData.append('num_stars', data.num_stars);
         formData.append('active', 1);
-        //Bruger authHeader til at tjekke om sessionStorage eksisterer
-        const result = await axios.post('https://api.mediehuset.net/homelands/reviews', formData, { headers: authHeader() });
+        // Bruger authHeader til at tjekke om sessionStorage eksisterer
+        const result = await axios.put('https://api.mediehuset.net/homelands/reviews', formData, { headers: authHeader() });
         //Fejlhåndtering i console
         if (result) {
-            console.log('Din kommentar er sendt');
+            console.log('Din kommentar er opdateret');
 
         } else {
             console.log(errors);
@@ -35,14 +35,13 @@ export const NewReviews = () => {
         setFormStatus(true)
     }
     return (
-        <section className={style.newreviw}>
+        <section >
 
             {/* Conditional ternary operator - vis input - efter tryk submit vis message */}
             {!formStatus ?
 
-                // handleSubmit validere  inputs inden kald af "onSubmit" 
-                <form onSubmit={handleSubmit(onSubmit)} className={style.reviwform}>
-
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <h5>Skriv en anmeldelse</h5>
                     <span>
                         {/* Validering TITLE - tjekker om title er udfyldt (required) og sender en fejl meddelese hvis der ikke er skrevet noget i feltet (... = Spread operator)*/}
                         <label>Title:</label>
@@ -66,20 +65,14 @@ export const NewReviews = () => {
 
                     <button type="submit" >Send</button>
                     <button type='reset'>Nulstil</button>
-
-
+                    <Link to={'/login'}>Gå tilbage til alle kommentar</Link>
                 </form>
                 :
-                // Ny form med besked om at formen er sendt og link til min side
-                <form className={style.formMessage}>
-                    <article>
-                        <h2>Tak for din anmeldelse</h2>
-                        <p>Din anmedelse er nu offenlig og alle kan se den</p>
-                        <p>Du kan se dine anmeldelser her: <Link to={'/login'}>din side</Link></p>
-
-
-                    </article>
-                </form>
+                // Ny del med besked om at kommentaren er opdateret og link til min side
+                <>
+                    <p>Din kommentar er opdateret!</p>
+                    <Link to={'/login'}>Gå tilbage til alle kommentar</Link>
+                </>
             }
         </section>
 

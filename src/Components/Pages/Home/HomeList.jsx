@@ -11,10 +11,10 @@ export const HomeList = () => {
         const getFavorites = async () => {
             try {
                 const result = await appService.getList('homes');
-                if (result.data) {
-                    setData(result.data.items);
-                    console.log(result.data.items)
-                }
+
+                setData(result.data.items);
+
+
             } catch (error) {
                 console.log(error)
             }

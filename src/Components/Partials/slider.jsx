@@ -26,7 +26,7 @@ export const Slider = () => {
 
     return (
         <header className={style.slider}>
-            <Carousel >
+            <Carousel className={style.slidercarousel}>
 
 
                 {slider && slider.map((items) => {

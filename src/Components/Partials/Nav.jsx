@@ -3,8 +3,12 @@ import { NavLink } from "react-router-dom"
 import { useState } from "react";
 import { AiFillHome, AiOutlineClose } from "react-icons/ai";
 import { Search } from './Search';
+import { useAuth } from "../Tools/Auth/Auth"
+import { Login } from '../Pages/Login/Login';
 
 export const Navigation = () => {
+    //Custum hook useAuth - henter vores getter og vores login side
+    const { loginData } = useAuth(Login);
     return (
         <div className={style.navWrapper}>
 
@@ -12,7 +16,8 @@ export const Navigation = () => {
                 <ul className={style.ulwrapper}>
                     <li><NavLink to={'/'}>Forside</NavLink></li>
                     <li><NavLink to={'/boliger'}>Boliger til salg</NavLink></li>
-                    <li><NavLink to={'/login'}>Login</NavLink></li>
+                    {/* //Hvis vi er logget ind vis "login" i nav ellers vis "logud" */}
+                    <li><NavLink to={'/login'}>{loginData.access_token ? "Min side" : "Login"}</NavLink></li>
                     <li><Search /></li>
 
                 </ul>

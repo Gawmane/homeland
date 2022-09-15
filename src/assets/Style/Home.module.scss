@@ -46,7 +46,16 @@
                 }
             }
         }
+
+        .Carouse {
+            button {
+                color: red;
+                display: none;
+            }
+        }
     }
+
+
 
     .newreviw {
         background-color: $black;
@@ -76,6 +85,11 @@
                 border: none;
                 resize: none;
                 display: block;
+            }
+
+            button {
+                cursor: pointer;
+                background-color: #fff;
             }
         }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import style from "../../../assets/Style/Home.module.scss"
 import appService from "../../Tools/Appservice/AppService"
+import Carousel from 'react-material-ui-carousel'
 
 export const Reviews = () => {
     const [data, setData] = useState([]);
@@ -20,9 +21,10 @@ export const Reviews = () => {
     }, []);
     return (
         <section className={style.reviews}>
+            <Carousel className={style.Carouse}>
 
-            {data && data.map((reviews, i) => {
-                if (i < 1) {
+                {data && data.map((reviews) => {
+
                     return (
                         <article key={reviews.id}>
                             <h4>{reviews.title}</h4>
@@ -30,11 +32,10 @@ export const Reviews = () => {
                             <p>{reviews.user.firstname} {reviews.user.lastname}, {reviews.user.created_friendly}</p>
                         </article>
                     )
-                }
-                else {
-                    return null
-                }
-            })}
+
+
+                })}
+            </Carousel>
         </section>
     )
 }

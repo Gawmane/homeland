@@ -15,7 +15,7 @@ const Search = () => {
         setKeyword(data.keyword);
     }
     return (
-        <>
+        <section className={style.search}>
             {/* //closure = sender funktion videre som tager en funktion som argument og så lukker */}
             <form onSubmit={handleSubmit(getSearchResult)} className={style.searchform}>
                 {/* //Spread operator(...) - giver mulighed for at kopiere hele eller dele af et eksisterende array eller objekt til et andet array eller objekt. */}
@@ -27,7 +27,7 @@ const Search = () => {
                 <SearchResult keyword={keyword} />
             )}
 
-        </>)
+        </section>)
 }
 
 //Viser hvilket søgeresulat der er kommet på ordet - result eller noResult
@@ -58,13 +58,18 @@ const SearchResult = props => {
 const Result = (props) => {
     return (
         <article className={style.searchlist}>
+
             <h3>Fandt {props.num_items} resultater på ordet <i>{props.keyword}</i></h3>
 
-            {/* //Midertigt indtil data fra houselist kan ersatte det */}
+
             {props.items && props.items.map(item => {
                 return (
-                    <Link to={`/boliger/${item.id}`}>
-                        <figure key={item.id}>
+
+
+                    //Linker til boligsiden med det id der er klikket ind på. ved click refresher siden så de andre resultater forsvinder.
+                    <Link to={`/boliger/${item.id}`} >
+
+                        <figure key={item.id} >
 
                             <img src={item.images[0].filename.medium} alt="image" key={item.id} />
                             <figcaption>
@@ -79,6 +84,7 @@ const Result = (props) => {
 
                 )
             })}
+
         </article >)
 }
 //Vises hvis keyword ikke findes - fejlmeddelese
@@ -90,5 +96,6 @@ const NoResult = (props) => {
         </>
     )
 }
+
 export { Search, SearchResult }
 

@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import houses from "../../../assets/Style/Houses.module.scss"
 // import { AiOutlineHeart } from "react-icons/ai";
+import { useParams } from "react-router-dom";
 
 
 export const HouseList = () => {
     const [data, setData] = useState([]);
+    const { house_id } = useParams(0);
 
 
     useEffect(() => {

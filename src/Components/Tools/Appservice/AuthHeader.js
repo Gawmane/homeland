@@ -1,9 +1,9 @@
 export const authHeader = () => {
   // Conditional ternary operator  - hvis localstorge har en værdi så skal du sætte jasonparse eller tom string
-  //Henter localstorge hvis den ekstitere 
+  //Henter sessionstorge hvis den ekstitere 
   const currentToken = sessionStorage.getItem("token") ? JSON.parse(sessionStorage.getItem("token")) : "";
 
-  // Sender beare token ind i authheader hvis currentToken er sand 
+  // Sender beare token ind i authheader hvis currentToken er eksisterer 
   if (currentToken) {
     return {
       // Alle api og dommar kan tilgå den her - *=anything(asteristk)

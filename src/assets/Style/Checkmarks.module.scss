@@ -1,0 +1,7 @@
+@import '../Helpers/mixin';
+@import '../Helpers/variabler';
+@import '../Helpers/animation';
+
+.checkmarks {
+    @include Checkmarks;
+}

@@ -3,9 +3,23 @@ import style from "../../../assets/Style/Houses.module.scss"
 import { AiFillCamera, AiOutlineHeart, AiOutlineBuild } from "react-icons/ai";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
 
 export const HouseDetailsItem = props => {
     const [openModal, setOpenModal] = useState("");
+    // const { handleSubmit, register} = useForm();
+    // const {loginData}
+    //     const setFavorite = async (data, e) => {
+    //         const formData = new FormData(e.target);
+    //         const options = {
+    //             headers:{
+    //             Authentication: ``
+    //             }
+    //         }
+    // const url ="";
+    // const result = await axios.post(url)
+    //     }
     return (
         <section className={style.details}>
 
@@ -19,7 +33,10 @@ export const HouseDetailsItem = props => {
                     <AiFillCamera onClick={() => setOpenModal("galleryicon")} />
                     <AiOutlineBuild onClick={() => setOpenModal("floorplanicon")} />
                     <FaMapMarkerAlt onClick={() => setOpenModal("mapicon")} />
-                    <AiOutlineHeart />
+                    {/* <form onSubmit={handleSubmit(setFavorite)}>
+                        <input type="hidden" name="home_id" value={props.data.id}{...register('home_id')} />
+                       <button> <AiOutlineHeart /></button></form> */}
+
                     {/* openmodal er i identisk med navnet i " " og det comonent der er tilføjet */}
                     {openModal === "mapicon" && <MapIcon />}
                     {openModal === "galleryicon" && <GalleryIcon />}
@@ -65,33 +82,5 @@ export const HouseDetailsItem = props => {
 
 
         </section>
-    )
-}
-//Icon compnenter til modal - virker ikke med api data
-export const FloorplanIcon = () => {
-
-    return (
-
-        <p>hej</p>
-
-
-
-
-    )
-}
-export const GalleryIcon = props => {
-    return (
-
-        // <img src={props.data.floorplan} alt="floorplan" />
-        <h1>agallery</h1>
-
-    )
-}
-export const MapIcon = props => {
-    return (
-
-        // <img src={props.data.floorplan} alt="floorplan" />
-        <h1>map</h1>
-
     )
 }

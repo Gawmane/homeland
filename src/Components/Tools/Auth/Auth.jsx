@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
 }
 //custom hook - useContext er en måde at styre dine tilstande (states) globalt.- bruges til at transpotere tilstandsværider igennem componter
 const useAuth = () => useContext(AuthContex);
+
 //Named export 
 export { AuthProvider, AuthContex, useAuth }
 
